@@ -13,6 +13,7 @@ export const Chart1 = () => {
         type: 'category',
         data: ['浙江省', '浙江省', '浙江省', '浙江省', '浙江省', '浙江省', '浙江省'],
         axisLabel: {
+          fontSize: px(15),
           formatter(val) {// X 轴文字换行
             if (val.length > 2) {
               const array = val.split('');
