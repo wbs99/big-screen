@@ -5,12 +5,17 @@
   display: flex;
   flex-direction: column;
   flex: 1;
+  color:white;
   > main {
-    flex:1;
+    flex: 1;
     display: grid;
     grid-template:
-    'box1 box2 box3' 1fr/354fr 714fr 340fr;
-
+    'box1 box4 box6' 292fr
+    'box2 box5 box7' 256fr
+    'box3 box5 box8' 243fr/354fr 714fr 340fr;
+    > section{
+      text-align: center;
+    }
     > .section1 {
       grid-area: box1;
       background: pink;
@@ -24,6 +29,40 @@
     > .section3 {
       grid-area: box3;
       background: lightblue;
+    }
+    > .section4 {
+      grid-area: box4;
+      background: lightcoral;
+    }
+    > .section5 {
+      grid-area: box5;
+      background: lightgreen;
+    }
+    > .section6 {
+      grid-area: box6;
+      background: lightgray;
+    }
+    > .section7 {
+      grid-area: box7;
+      background: lightgoldenrodyellow;
+    }
+    > .section8 {
+      grid-area: box8;
+      background: lightsalmon;
+    }
+
+    .案发派出所管辖统计 {
+      height: px(292);
+      display: flex;
+      flex-direction: column;
+      h2{
+        flex-shrink: 0;
+        display: inline-block;
+      }
+      .chart{
+        flex-grow: 1;
+        border:1px solid red;
+      }
     }
   }
 }
