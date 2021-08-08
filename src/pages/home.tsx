@@ -3,6 +3,12 @@ import './home.scss';
 
 export const Home = () => {
   return (
-    <div className="x"></div>
+    <div className='home'>
+      <main>
+        <section className='section1'></section>
+        <section className='section2'></section>
+        <section className='section3'></section>
+      </main>
+    </div>
   );
 };
