@@ -4,7 +4,7 @@
   display: flex;
   flex-direction: column;
   flex: 1;
-  color: black;
+  color: white;
 
   > main {
     flex: 1;
@@ -20,45 +20,37 @@
 
     > .section1 {
       grid-area: box1;
-      background: pink;
     }
 
     > .section2 {
       grid-area: box2;
-      background: #fe6462;
     }
 
     > .section3 {
       grid-area: box3;
-      background: lightblue;
     }
 
     > .section4 {
       grid-area: box4;
-      background: lightcoral;
     }
 
     > .section5 {
       grid-area: box5;
-      background: pink;
     }
 
     > .section6 {
       grid-area: box6;
-      background: lightseagreen;
     }
 
     > .section7 {
       grid-area: box7;
-      background: lightslategray;
     }
 
     > .section8 {
       grid-area: box8;
-      background: lightyellow;
     }
 
-    .案发派出所管辖统计, .发案趋势分析, .案发时段分析, .犯罪人员年龄分布,.案发街道统计,.犯罪年龄趋势{
+    .案发派出所管辖统计, .发案趋势分析, .案发时段分析, .犯罪人员年龄分布, .案发街道统计, .犯罪年龄趋势 {
       display: flex;
       flex-direction: column;
 
@@ -76,11 +68,11 @@
       height: px(262);
     }
 
-    .发案趋势分析, .案发街道统计{
+    .发案趋势分析, .案发街道统计 {
       height: px(262);
     }
 
-    .案发时段分析,.犯罪年龄趋势 {
+    .案发时段分析, .犯罪年龄趋势 {
       height: px(262);
     }
 
@@ -103,7 +95,21 @@
       }
     }
 
-
+    //h1 {
+    //  font-size: px(34);
+    //  text-shadow: 0 0 10px white, 0 0 20px white, 0 0 30px white, 0 0 40px white;
+    //}
+    //.title {
+    //  border:1px solid green;
+    //  height: px(262);
+    //  position: relative;
+    //  span{
+    //    border:1px solid red;
+    //    position: absolute;
+    //    right: px(20);
+    //    top:px(20);
+    //  }
+    //}
 
   }
 }

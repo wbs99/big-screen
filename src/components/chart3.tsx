@@ -1,15 +1,38 @@
 import React, {useEffect, useRef} from 'react';
 import * as echarts from 'echarts';
-import '../shared/same-options.ts'
+import '../shared/same-options.ts';
 import {sameOptions} from '../shared/same-options';
 
 const px = (n) => n / 1408 * (window as any).pageWidth;
 export const Chart3 = () => {
   const divRef = useRef(null);
+  const myChart = useRef(null);
+  const data = {
+    1: [
+      0.15, 0.13, 0.11,
+      0.13, 0.14, 0.15,
+      0.16, 0.18, 0.08,
+      0.19, 0.17, 0.16,
+      0.15
+    ],
+    2: [
+      0.14, 0.16, 0.18,
+      0.13, 0.12, 0.15,
+      0.16, 0.18, 0.13,
+      0.21, 0.18, 0.16,
+      0.15
+    ],
+    3: [
+      0.11, 0.10, 0.11,
+      0.08, 0.08, 0.08,
+      0.16, 0.18, 0.16,
+      0.19, 0.17, 0.16,
+      0.15
+    ],
+  };
 
-  useEffect(() => {
-    var myChart = echarts.init(divRef.current);
-    myChart.setOption({
+  const render = data => {
+    myChart.current.setOption({
       ...sameOptions,
       xAxis: {
         type: 'category',
@@ -31,13 +54,7 @@ export const Chart3 = () => {
       series: [{
         name: '故意伤人',
         type: 'line',
-        data: [
-          0.15, 0.13, 0.11,
-          0.13, 0.14, 0.15,
-          0.16, 0.18, 0.21,
-          0.19, 0.17, 0.16,
-          0.15
-        ],
+        data: data,
         symbol: 'circle',
         symbolSize: px(12),
         lineStyle: {width: px(2)},
@@ -52,7 +69,16 @@ export const Chart3 = () => {
         }
       }]
     });
+  };
+
+  useEffect(() => {
+    myChart.current = echarts.init(divRef.current);
+    render(data[1]);
+    setInterval(() => {
+      render(data[Math.ceil(Math.random() * 3)]); // render(data[1,2,3])
+    }, 1000);
   }, []);
+
   return (
     <div className="案发时段分析">
       <h2>案发时段分析</h2>

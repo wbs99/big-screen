@@ -1,20 +1,23 @@
 import React, {useEffect, useRef} from 'react';
 import * as echarts from 'echarts';
-import '../shared/same-options.ts'
-import {sameOptions} from '../shared/same-options';
+import '../shared/same-options.ts';
+import {px, sameOptions} from '../shared/same-options';
 
-const px = (n) => n / 1408 * (window as any).pageWidth;
 export const Chart1 = () => {
   const divRef = useRef(null);
-
-  useEffect(() => {
-    var myChart = echarts.init(divRef.current);
-    myChart.setOption({
+  const myChart = useRef(null);
+  const data = {
+    1: [120, 180, 150, 130, 80, 60, 130, '湖北', '浙江', '福建', '北京', '上海', '重庆', '河北'],
+    2: [170, 130, 60, 80, 170, 100, 60, '湖南', '广东', '山东', '陕西', '内蒙古', '广西', '江苏'],
+    3: [140, 60, 170, 180, 160, 88, 140, '黑龙江', '辽宁', '江西', '新疆', '河南', '吉林', '宁夏']
+  };
+  const render = data => {
+    myChart.current.setOption({
       ...sameOptions,
       xAxis: {
         axisTick: {show: false}, //坐标轴刻度
         type: 'category',
-        data: ['浙江省', '浙江省', '浙江省', '浙江省', '浙江省', '浙江省', '浙江省'],
+        data: data.slice(7, -1),
         axisLabel: {
           fontSize: px(15),
           formatter(val) {// X 轴文字换行
@@ -34,11 +37,20 @@ export const Chart1 = () => {
         type: 'value'
       },
       series: [{
-        data: [120, 200, 150, 80, 70, 110, 130],
+        data: data.slice(0, 6),
         type: 'bar'
       }]
     });
+  };
+
+  useEffect(() => {
+    myChart.current = echarts.init(divRef.current);
+    render(data[1]);
+    setInterval(() => {
+      render(data[Math.ceil(Math.random() * 3)]); // render(data[1,2,3])
+    }, 1500);
   }, []);
+
   return (
     <div className="案发派出所管辖统计">
       <h2>案发派出所管辖统计</h2>

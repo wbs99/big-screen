@@ -1,14 +1,31 @@
 import React, {useEffect, useRef} from 'react';
 import * as echarts from 'echarts';
-import '../shared/same-options.ts'
+import '../shared/same-options.ts';
 
 const px = (n) => n / 1408 * (window as any).pageWidth;
 
 export const Chart8 = () => {
   const divRef = useRef(null);
-  useEffect(() => {
-    var myChart = echarts.init(divRef.current);
-    myChart.setOption({
+  const myChart = useRef(null);
+  const data = {
+    1: [
+      0.19, 0.20, 0.26,
+      0.35, 0.26, 0.20,
+      0.08, 0.06
+    ],
+    2: [
+      0.23, 0.16, 0.28,
+      0.30, 0.23, 0.24,
+      0.16, 0.10
+    ],
+    3: [
+      0.28, 0.20, 0.26,
+      0.26, 0.26, 0.18,
+      0.08, 0.14
+    ],
+  };
+  const render = data => {
+    myChart.current.setOption({
       color: '#F7A110',
       legend: {
         bottom: px(10),
@@ -42,11 +59,7 @@ export const Chart8 = () => {
       },
       series: [{
         type: 'line',
-        data: [
-          0.19, 0.20, 0.26,
-          0.35, 0.26, 0.20,
-          0.08, 0.06
-        ],
+        data: data,
         symbol: 'circle',
         symbolSize: px(12),
         lineStyle: {width: px(2)},
@@ -61,8 +74,15 @@ export const Chart8 = () => {
         }
       }]
     });
-  }, []);
+  };
 
+  useEffect(() => {
+    myChart.current = echarts.init(divRef.current);
+    render(data[1]);
+    setInterval(() => {
+      render(data[Math.ceil(Math.random() * 3)]); // render(data[1,2,3])
+    }, 1000);
+  }, []);
 
   return (
     <div className="犯罪年龄趋势">
