@@ -10,9 +10,9 @@
     flex: 1;
     display: grid;
     grid-template:
-    'box1 box4 box6' 292fr
-    'box2 box5 box7' 256fr
-    'box3 box5 box8' 243fr/354fr 714fr 340fr;
+    'box1 box4 box6' 262fr
+    'box2 box5 box7' 262fr
+    'box3 box5 box8' 262fr/354fr 714fr 340fr;
 
     > section {
       text-align: center;
@@ -40,25 +40,25 @@
 
     > .section5 {
       grid-area: box5;
-      background: white;
+      background: pink;
     }
 
     > .section6 {
       grid-area: box6;
-      background: pink;
+      background: lightseagreen;
     }
 
     > .section7 {
       grid-area: box7;
-      background: lightgoldenrodyellow;
+      background: lightslategray;
     }
 
     > .section8 {
       grid-area: box8;
-      background: lightsalmon;
+      background: lightyellow;
     }
 
-    .案发派出所管辖统计, .发案趋势分析, .案发时段分析, .犯罪人员年龄分布 {
+    .案发派出所管辖统计, .发案趋势分析, .案发时段分析, .犯罪人员年龄分布,.案发街道统计,.犯罪年龄趋势{
       display: flex;
       flex-direction: column;
 
@@ -73,20 +73,19 @@
     }
 
     .案发派出所管辖统计, .犯罪人员年龄分布 {
-      height: px(292);
+      height: px(262);
     }
 
-    .发案趋势分析 {
-      height: px(256);
+    .发案趋势分析, .案发街道统计{
+      height: px(262);
     }
 
-    .案发时段分析 {
-      height: px(243);
+    .案发时段分析,.犯罪年龄趋势 {
+      height: px(262);
     }
 
     .map {
-      border: 1px solid red;
-      height: px(499);
+      height: px(524);
       display: flex;
       flex-direction: column;
       position: relative;
@@ -98,27 +97,13 @@
 
       span {
         position: absolute;
-        right: 60px;
-        bottom: 30px;
-        font-size: 18px;
+        right: px(40);
+        bottom: px(20);
+        font-size: px(18);
       }
     }
 
-    .犯罪人员年龄分布 {
-      position: relative;
-      .chart {
-        border:1px solid blue;
-      }
-      .spanWrapper {
-        display: flex;
-        flex-direction: column;
-        position: absolute;
-        top:px(88);
-        left:px(16);
-      }
-      span{
-        padding: px(6);
-      }
-    }
+
+
   }
 }

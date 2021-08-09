@@ -17,7 +17,7 @@ export const Chart6 = () => {
       },
       legend: {
         left: px(2),
-        top: px(70),
+        top: px(52),
         orient: 'vertical',
         textStyle: {color: 'white'},
         itemWidth: px(6),
@@ -58,13 +58,6 @@ export const Chart6 = () => {
     <div className="犯罪人员年龄分布">
       <h2>犯罪人员年龄分布</h2>
       <div ref={divRef} className="chart"></div>
-      {/*<div className='spanWrapper'>*/}
-      {/*  <span>10-20</span>*/}
-      {/*  <span>20-30</span>*/}
-      {/*  <span>30-40</span>*/}
-      {/*  <span>40-50</span>*/}
-      {/*  <span>50-60</span>*/}
-      {/*</div>*/}
     </div>
   );
 };

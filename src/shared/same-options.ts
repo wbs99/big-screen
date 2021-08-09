@@ -1,4 +1,4 @@
-export const px = (n) => n / 2420 * (window as any).pageWidth;
+export const px = (n) => n / 1408 * (window as any).pageWidth;
 
 export const sameOptions = {
 
