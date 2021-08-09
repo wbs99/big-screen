@@ -45,7 +45,7 @@
 
     > .section6 {
       grid-area: box6;
-      background: lightgray;
+      background: pink;
     }
 
     > .section7 {
@@ -58,35 +58,66 @@
       background: lightsalmon;
     }
 
-    .案发派出所管辖统计, .发案趋势分析,.案发时段分析 {
+    .案发派出所管辖统计, .发案趋势分析, .案发时段分析, .犯罪人员年龄分布 {
       display: flex;
       flex-direction: column;
+
       h2 {
         flex-shrink: 0;
         display: inline-block;
       }
+
       .chart {
         flex-grow: 1;
       }
     }
 
-    .案发派出所管辖统计, {
+    .案发派出所管辖统计, .犯罪人员年龄分布 {
       height: px(292);
     }
 
     .发案趋势分析 {
       height: px(256);
     }
-    .案发时段分析{
+
+    .案发时段分析 {
       height: px(243);
     }
-    .map{
-      border:1px solid red;
+
+    .map {
+      border: 1px solid red;
       height: px(499);
       display: flex;
       flex-direction: column;
-      .chart{
+      position: relative;
+
+      .chart {
         flex-grow: 1;
+        padding: 10px 10px;
+      }
+
+      span {
+        position: absolute;
+        right: 60px;
+        bottom: 30px;
+        font-size: 18px;
+      }
+    }
+
+    .犯罪人员年龄分布 {
+      position: relative;
+      .chart {
+        border:1px solid blue;
+      }
+      .spanWrapper {
+        display: flex;
+        flex-direction: column;
+        position: absolute;
+        top:px(88);
+        left:px(16);
+      }
+      span{
+        padding: px(6);
       }
     }
   }

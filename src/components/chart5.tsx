@@ -17,6 +17,9 @@ export const Chart5 = () => {
       color: ['#97cbce', '#3559a7', '#f6b044', '#ea5c5a', '#3ab059', '#fdfdfd'],
       xAxis: {show: false},
       yAxis: {show: false},
+      textStyle:{
+        fontSize:px(16)
+      },
       series: [
         {
           type: 'map',
@@ -38,9 +41,9 @@ export const Chart5 = () => {
     });
   }, []);
   return (
-    <div className='map'>
+    <div className="map">
       <div ref={divRef} className="chart"></div>
-      <p>该地图只显示中国部分地区</p>
+      <span>该地图只显示中国部分地区</span>
     </div>
 
   );
