@@ -2,6 +2,8 @@ import React, {useEffect, useRef} from 'react';
 import './home.scss';
 import {Chart1} from '../components/chart1';
 import {Chart2} from '../components/chart2';
+import {Chart3} from '../components/chart3';
+import {Chart5} from '../components/chart5';
 
 export const Home = () => {
 
@@ -14,9 +16,13 @@ export const Home = () => {
         <section className="section2">
           <Chart2/>
         </section>
-        <section className="section3"></section>
+        <section className="section3">
+          <Chart3/>
+        </section>
         <section className="section4"></section>
-        <section className="section5"></section>
+        <section className="section5">
+          <Chart5/>
+        </section>
         <section className="section6"></section>
         <section className="section7"></section>
         <section className="section8"></section>

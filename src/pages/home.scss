@@ -40,7 +40,7 @@
 
     > .section5 {
       grid-area: box5;
-      background: lightgreen;
+      background: white;
     }
 
     > .section6 {
@@ -58,15 +58,13 @@
       background: lightsalmon;
     }
 
-    .案发派出所管辖统计, .发案趋势分析 {
+    .案发派出所管辖统计, .发案趋势分析,.案发时段分析 {
       display: flex;
       flex-direction: column;
-
       h2 {
         flex-shrink: 0;
         display: inline-block;
       }
-
       .chart {
         flex-grow: 1;
       }
@@ -78,6 +76,18 @@
 
     .发案趋势分析 {
       height: px(256);
+    }
+    .案发时段分析{
+      height: px(243);
+    }
+    .map{
+      border:1px solid red;
+      height: px(499);
+      display: flex;
+      flex-direction: column;
+      .chart{
+        flex-grow: 1;
+      }
     }
   }
 }

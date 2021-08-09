@@ -1,5 +1,7 @@
 import React, {useEffect, useRef} from 'react';
 import * as echarts from 'echarts';
+import '../shared/same-options.ts'
+import {sameOptions} from '../shared/same-options';
 
 const px = (n) => n / 1408 * (window as any).pageWidth;
 export const Chart1 = () => {
@@ -8,6 +10,7 @@ export const Chart1 = () => {
   useEffect(() => {
     var myChart = echarts.init(divRef.current);
     myChart.setOption({
+      ...sameOptions,
       xAxis: {
         axisTick: {show: false}, //坐标轴刻度
         type: 'category',

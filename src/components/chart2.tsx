@@ -1,5 +1,6 @@
 import React, {useEffect, useRef} from 'react';
 import * as echarts from 'echarts';
+import '../shared/same-options.ts'
 
 const px = (n) => n / 1408 * (window as any).pageWidth;
 
