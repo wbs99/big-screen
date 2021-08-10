@@ -50,13 +50,16 @@
       grid-area: box8;
     }
 
-    .案发派出所管辖统计, .发案趋势分析, .案发时段分析, .犯罪人员年龄分布, .案发街道统计, .犯罪年龄趋势 {
+    .案发派出所管辖统计, .发案趋势分析, .案发时段分析, .犯罪人员年龄分布, .案发市统计, .犯罪年龄趋势 {
       display: flex;
       flex-direction: column;
 
       h2 {
+        border:1px solid #293069;
+        background: #272446;
         flex-shrink: 0;
         display: inline-block;
+        font-size:px(16);
       }
 
       .chart {
@@ -68,7 +71,7 @@
       height: px(262);
     }
 
-    .发案趋势分析, .案发街道统计 {
+    .发案趋势分析, .案发市统计 {
       height: px(262);
     }
 
@@ -93,23 +96,39 @@
         bottom: px(20);
         font-size: px(18);
       }
+      footer{
+        position: absolute;
+        left: px(40);
+        bottom: px(20);
+        font-size: px(18);
+      }
     }
 
-    //h1 {
-    //  font-size: px(34);
-    //  text-shadow: 0 0 10px white, 0 0 20px white, 0 0 30px white, 0 0 40px white;
-    //}
-    //.title {
-    //  border:1px solid green;
-    //  height: px(262);
-    //  position: relative;
-    //  span{
-    //    border:1px solid red;
-    //    position: absolute;
-    //    right: px(20);
-    //    top:px(20);
-    //  }
-    //}
+    h1 {
+      font-size: px(34);
+      text-shadow: 0 0 10px white, 0 0 20px white, 0 0 30px white, 0 0 40px white;
+    }
+
+    .title {
+      height: px(262);
+      .divWrapper{
+        display: flex;
+        justify-content: space-around;
+        div{
+          border:px(1) solid #293069;
+          background: #080a19;
+          display: flex;
+          flex-direction: column;
+          justify-content: center;
+          align-items: center;
+          margin-top:px(80);
+          padding:px(20) px(20);
+          span{
+            margin-bottom:px(4);
+          }
+        }
+      }
+    }
 
   }
 }
