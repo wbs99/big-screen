@@ -10,7 +10,6 @@ import {Chart7} from '../components/chart7';
 import {Chart8} from '../components/chart8';
 import {Chart4} from '../components/chart4';
 export const Home = () => {
-
   return (
     <div className="home" style={{backgroundImage:`url(${bg})`}}>
       <main>
