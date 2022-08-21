@@ -1,4 +1,4 @@
-@import "../shared/helper";
+@import '../shared/helper';
 
 .home {
   display: flex;
@@ -10,9 +10,9 @@
     flex: 1;
     display: grid;
     grid-template:
-    'box1 box4 box6' 262fr
-    'box2 box5 box7' 262fr
-    'box3 box5 box8' 262fr/354fr 714fr 340fr;
+      'box1 box4 box6' 262fr
+      'box2 box5 box7' 262fr
+      'box3 box5 box8' 262fr/354fr 714fr 340fr;
 
     > section {
       text-align: center;
@@ -50,16 +50,21 @@
       grid-area: box8;
     }
 
-    .案发派出所管辖统计, .发案趋势分析, .案发时段分析, .犯罪人员年龄分布, .案发市统计, .犯罪年龄趋势 {
+    .案发派出所管辖统计,
+    .发案趋势分析,
+    .案发时段分析,
+    .犯罪人员年龄分布,
+    .案发市统计,
+    .犯罪年龄趋势 {
       display: flex;
       flex-direction: column;
 
       h2 {
-        border:1px solid #293069;
+        border: 1px solid #293069;
         background: #272446;
         flex-shrink: 0;
         display: inline-block;
-        font-size:px(16);
+        font-size: px(16);
       }
 
       .chart {
@@ -67,15 +72,18 @@
       }
     }
 
-    .案发派出所管辖统计, .犯罪人员年龄分布 {
+    .案发派出所管辖统计,
+    .犯罪人员年龄分布 {
       height: px(262);
     }
 
-    .发案趋势分析, .案发市统计 {
+    .发案趋势分析,
+    .案发市统计 {
       height: px(262);
     }
 
-    .案发时段分析, .犯罪年龄趋势 {
+    .案发时段分析,
+    .犯罪年龄趋势 {
       height: px(262);
     }
 
@@ -96,7 +104,7 @@
         bottom: px(20);
         font-size: px(18);
       }
-      footer{
+      footer {
         position: absolute;
         left: px(40);
         bottom: px(20);
@@ -106,29 +114,29 @@
 
     h1 {
       font-size: px(34);
-      text-shadow: 0 0 10px white, 0 0 20px white, 0 0 30px white, 0 0 40px white;
+      text-shadow: 0 0 10px white, 0 0 20px white, 0 0 30px white,
+        0 0 40px white;
     }
 
     .title {
       height: px(262);
-      .divWrapper{
+      .divWrapper {
         display: flex;
         justify-content: space-around;
-        div{
-          border:px(1) solid #293069;
+        div {
+          border: px(1) solid #293069;
           background: #080a19;
           display: flex;
           flex-direction: column;
           justify-content: center;
           align-items: center;
-          margin-top:px(80);
-          padding:px(20) px(20);
-          span{
-            margin-bottom:px(4);
+          margin-top: px(80);
+          padding: px(20) px(20);
+          span {
+            margin-bottom: px(4);
           }
         }
       }
     }
-
   }
 }
